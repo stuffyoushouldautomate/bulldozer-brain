@@ -1,0 +1,32 @@
+{
+  "name": "Bulldozer Brain",
+  "short_name": "Bulldozer Brain",
+  "id": "bulldozer-brain",
+  "scope": ".",
+  "icons": [
+    {
+      "src": "logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "screenshots/main-interface.png",
+      "sizes": "800x800",
+      "type": "image/png"
+    },
+    {
+      "src": "screenshots/main-interface.png",
+      "sizes": "800x800",
+      "type": "image/png",
+      "form_factor": "wide"
+    }
+  ],
+  "theme_color": "#FFFFFF",
+  "background_color": "#FFFFFF",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait"
+}
