@@ -1,14 +1,12 @@
 "use client";
 import {
-  useLayoutEffect,
   useState,
   useCallback,
-  useMemo,
   type ReactNode,
 } from "react";
 import { useTranslation } from "react-i18next";
 import { usePWAInstall } from "react-use-pwa-install";
-import { RefreshCw, CircleHelp, MonitorDown } from "lucide-react";
+import { CircleHelp, MonitorDown } from "lucide-react";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
@@ -33,10 +31,8 @@ import { Input } from "@/components/ui/input";
 import {
   Select,
   SelectContent,
-  SelectGroup,
   SelectItem,
   SelectTrigger,
-  SelectLabel,
   SelectValue,
 } from "@/components/ui/select";
 import { Button } from "@/components/ui/button";
@@ -66,7 +62,7 @@ type SettingProps = {
   onClose: () => void;
 };
 
-const BUILD_MODE = process.env.NEXT_PUBLIC_BUILD_MODE;
+
 const VERSION = process.env.NEXT_PUBLIC_VERSION;
 const DISABLED_SEARCH_PROVIDER =
   process.env.NEXT_PUBLIC_DISABLED_SEARCH_PROVIDER || "";
@@ -97,15 +93,9 @@ const formSchema = z.object({
   onlyUseLocalResource: z.enum(["enable", "disable"]).optional(),
 });
 
-function convertModelName(name: string) {
-  return name
-    .replaceAll("/", "-")
-    .split("-")
-    .map((word) => capitalize(word))
-    .join(" ");
-}
 
-let preLoading = false;
+
+
 
 function HelpTip({ children, tip }: { children: ReactNode; tip: string }) {
   const [open, setOpen] = useState<boolean>(false);
