@@ -45,11 +45,11 @@ function Home() {
         <FinalReport />
       </main>
       <footer className="my-4 text-center text-sm text-gray-600 print:hidden">
-        <a href="https://github.com/u14app/" target="_blank">
+        <div>
           {t("copyright", {
-            name: "U14App",
+            name: "Local 825 - International Union of Operating Engineers",
           })}
-        </a>
+        </div>
       </footer>
       <aside className="print:hidden">
         <Setting open={openSetting} onClose={() => setOpenSetting(false)} />
